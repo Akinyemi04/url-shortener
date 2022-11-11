@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import Home from './Components/Home';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetching } from './Components/store';
 
 function App() {
+  const dispatch = useDispatch()
+  const array = useSelector((val)=>{
+    return val.Data.data_array
+  })
+  useEffect(()=>{
+    if(array.length === 0 && localStorage.getItem('url')){
+      dispatch(fetching.addArray())
+    }
+    else if (array.length !==0){
+      localStorage.setItem('url',JSON.stringify(array))
+    }
+    else{
+      localStorage.setItem('url',JSON.stringify(array))
+    }
+  },[array,dispatch])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home/>
     </div>
   );
 }

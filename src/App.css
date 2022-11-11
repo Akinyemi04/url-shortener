@@ -1,38 +1,601 @@
-.App {
-  text-align: center;
+* {
+  padding: 0 0;
+  margin: 0 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 5px;
+  -webkit-border-start: 2vw;
+          border-inline-start: 2vw;
+  -webkit-border-end: 2vw;
+          border-inline-end: 2vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Track */
+::-webkit-scrollbar-track {
+  background: grey;
+  border-radius: 100vw;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 100vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.connector {
+  width: 84vw;
+  margin: auto;
+  border: 1px solid black;
+  height: 13.5vh;
+  background-image: url("./Components//images/bg-shorten-desktop.svg");
+  border-radius: 1.1vw;
+  background-size: contain;
+  padding-left: 8vw;
+  padding-top: 3vh;
+  background-color: rgb(48, 13, 79);
+  position: relative;
+  bottom: 6vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.connector input {
+  width: 50vw;
+  height: 6vh;
+  padding-left: 2vw;
+  border-radius: 1vw;
+  border: 1px solid white;
+}
+.connector .input::-moz-placeholder {
+  color: red;
+}
+.connector .input:-ms-input-placeholder {
+  color: red;
+}
+.connector .input::placeholder {
+  color: red;
+}
+.connector button {
+  margin-left: 5vw;
+  width: 11vw;
+  height: 6vh;
+  background-color: rgb(126, 242, 194);
+  border-radius: 1.5vw;
+  outline: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.connector span {
+  position: absolute;
+  bottom: 1vh;
+  color: white;
+  font-style: italic;
+  left: 8vw;
+}
+.connector button:hover {
+  opacity: 0.67;
+}
+
+.list {
+  width: 84vw;
+  position: relative;
+  bottom: 3vh;
+  margin: auto;
+}
+.list .array {
+  width: 84vw;
+  height: 8.5vh;
+  background-color: white;
+  border-radius: 0.65vw;
+  margin-bottom: 2.1vh;
+  position: relative;
+}
+.list .array .left {
+  position: absolute;
+  left: 2vw;
+  top: 1.3vh;
+}
+.list .array .right {
+  position: absolute;
+  top: 1.3vh;
+  right: 25vw;
+  color: rgb(64, 202, 145);
+}
+.list .array hr {
+  display: none;
+}
+.list .array button {
+  position: absolute;
+  cursor: pointer;
+  top: 1.3vh;
+  width: 6.4vw;
+  height: 4vh;
+  right: 8vw;
+  border-radius: 0.5vw;
+  border: none;
+  color: white;
+  background-color: rgb(64, 202, 145);
+}
+.list .array button:hover {
+  opacity: 0.67;
+}
+
+.App {
+  overflow-x: hidden;
+}
+.App .home {
+  padding: 3.5vh 0vw 3.5vh 7vw;
+  margin-top: 2vh;
+  height: 90vh;
+}
+.App .home img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.App .home .option {
+  display: none;
+}
+.App .home header {
+  display: flex;
+}
+.App .home .semi_header {
+  display: flex;
+}
+.App .home .semi_header hr {
+  display: none;
+}
+.App .home .semi_header section {
+  display: flex;
+  margin-left: 3vw;
+  padding-top: 1.1vh;
+}
+.App .home .semi_header section span {
+  font-size: medium;
+  font-weight: 500;
+  color: grey;
+  margin-right: 1.7vw;
+  transition: color 0.6s ease-in;
+  cursor: pointer;
+}
+.App .home .semi_header section span:hover {
+  color: black;
+}
+.App .home .semi_header .aside {
+  margin-left: 33vw;
+  padding-top: 1.1vh;
+}
+.App .home .semi_header .aside p {
+  display: inline-block;
+  font-size: larger;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 500;
+  margin-right: 2vw;
+}
+.App .home .semi_header .aside .button {
+  border: none;
+  background-color: rgb(126, 242, 194);
+  font-size: medium;
+  color: white;
+  padding: 1vh 1.3vw;
+  border-radius: 2vw;
+}
+.App .home .semi_header .aside .button:hover {
+  opacity: 0.6;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.App .home .semi_header .aside p:hover {
+  color: black;
+  color: grey;
+}
+.App .home main {
+  margin-top: 5vh;
+  display: flex;
+}
+.App .home main img {
+  float: right;
+  position: relative;
+  left: 3vw;
+  width: 60vw;
+  height: 65vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.App .home main aside {
+  width: 50vw;
+  margin-right: 12vw;
+  padding-top: 5vh;
+}
+.App .home main aside h1 {
+  font-size: 48px;
+}
+.App .home main aside p {
+  margin-top: 1.1vh;
+  font-size: large;
+  margin-bottom: 3vh;
+  width: 28vw;
+}
+.App .home main aside button {
+  padding: 1.5vh 2.8vw;
+  border: none;
+  font-size: medium;
+  background-color: rgb(126, 242, 194);
+  border-radius: 2vw;
+  color: white;
+  cursor: pointer;
+}
+.App .home main aside button:hover {
+  opacity: 0.67;
+}
+.App .s_page {
+  min-height: 81vh;
+  background-color: rgb(211, 219, 224);
+  text-align: center;
+  max-height: 150vh;
+}
+.App .s_page h2 {
+  margin-top: 6vh;
+}
+.App .s_page p {
+  width: 35vw;
+  font-weight: 500;
+  margin-top: 2vh;
+  color: grey;
+}
+.App .s_page .flexer {
+  display: flex;
+  margin: 6vh 7vw 0vw 7vw;
+  padding-bottom: 6vh;
+}
+.App .s_page .flexer aside {
+  display: inline-block;
+  width: 25.3vw;
+  position: relative;
+  height: 26vh;
+  border: 1px solid white;
+  margin-right: 4vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  text-align: left;
+  background-color: white;
+  border-radius: 0.5vw;
+}
+.App .s_page .flexer aside .div {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -3vh;
+  left: 3vw;
+  text-align: center;
+  align-content: center;
+  padding-top: 13px;
+  background-color: rgb(28, 32, 38);
+  border-radius: 50%;
+}
+.App .s_page .flexer aside .div img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 35px;
+  height: 35px;
+}
+.App .s_page .flexer aside h2 {
+  font-size: medium;
+}
+.App .s_page .flexer aside p {
+  font-size: small;
+  width: 23vw;
+}
+.App .s_page .flexer .one hr {
+  position: absolute;
+  width: 6vw;
+  height: 0.9vh;
+  border-radius: 0.9vw;
+  background-color: rgb(67, 153, 133);
+  right: -6vw;
+}
+.App .s_page .flexer .two {
+  margin-top: 5vh;
+}
+.App .s_page .flexer .two hr {
+  position: absolute;
+  right: -6vw;
+  top: 15vh;
+  width: 6vw;
+  height: 0.9vh;
+  background-color: rgb(67, 153, 133);
+  border-radius: 0.6vw;
+}
+.App .s_page .flexer .three {
+  margin-top: 10vh;
+}
+.App .pre_footer {
+  width: 100vw;
+  height: 25vh;
+  background-image: url("./Components/images/bg-boost-desktop.svg");
+  background-color: rgb(48, 13, 79);
+  background-size: cover;
+  text-align: center;
+  padding-top: 3vh;
+}
+.App .pre_footer h4 {
+  color: rgb(228, 224, 224);
+  font-size: x-large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 500;
+}
+.App .pre_footer button {
+  margin-top: 2vh;
+  padding: 1.1vh 2vw;
+  color: white;
+  background-color: rgb(126, 242, 194);
+  border-radius: 2vw;
+  cursor: pointer;
+  border: 1px solid rgb(126, 242, 194);
+}
+.App .pre_footer button:hover {
+  opacity: 0.67;
+}
+.App footer {
+  display: flex;
+  min-height: 29vh;
+  padding: 4vh 8vw;
+  background-color: rgb(16, 14, 18);
+  color: white;
+}
+.App footer img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: relative;
+  bottom: 7vh;
+  margin-right: 14vw;
+  filter: invert(1);
+  -webkit-filter: invert(1);
+}
+.App footer ul {
+  margin-right: 6.2vw;
+}
+.App footer ul .main_text {
+  font-size: large;
+  font-weight: 600;
+}
+.App footer ul .main_text:hover {
+  color: white;
+}
+.App footer ul li {
+  list-style: none;
+  font-size: small;
+  margin-top: 0.78vh;
+  cursor: pointer;
+}
+.App footer ul :hover {
+  color: rgb(126, 242, 194);
+}
+.App footer .diver {
+  margin-left: 7vw;
+  margin-top: 2vh;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.App footer .diver .MuiSvgIcon-root {
+  margin-right: 1.1vw;
+  cursor: pointer;
+}
+.App footer .diver :hover {
+  color: rgb(126, 242, 194);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 970px) {
+  .App .home main aside {
+    margin-right: 0vw;
   }
 }
+@media screen and (max-width: 550px) {
+  .connector {
+    height: 19.8vh;
+    background-image: url("./Components//images/bg-shorten-mobile.svg");
+    background-size: contain;
+  }
+  .connector input {
+    font-size: 16px;
+    width: 70vw;
+  }
+  .connector button {
+    position: absolute;
+    bottom: 1.5vh;
+    width: 70vw;
+    margin-left: 0.3vw;
+    height: 4.5vh;
+    font-size: large;
+  }
+  .connector span {
+    bottom: 7vh;
+  }
+  .list .array {
+    height: 15.5vh;
+    padding-top: 1.5vh;
+    border-radius: 1.2vw;
+    text-align: left;
+  }
+  .list .array hr {
+    display: block;
+    margin-top: 0.83vh;
+    margin-bottom: 0.8vh;
+  }
+  .list .array .left, .list .array .right {
+    position: static;
+    padding-left: 5vw;
+    font-size: large;
+    display: block;
+  }
+  .list .array .right {
+    margin-bottom: 1.3vh;
+  }
+  .list .array button {
+    position: static;
+    font-size: large;
+    display: block;
+    width: 70vw;
+    height: 4vh;
+    margin: auto;
+    border-radius: 1vw;
+  }
+  .App .home {
+    padding: 2.5vh 0;
+    min-height: 115vh;
+  }
+  .App .home header .option {
+    display: inline-block;
+    position: absolute;
+    font-size: x-large;
+    right: 5vw;
+  }
+  .App .home header img {
+    margin-left: 3vw;
+  }
+  .App .home header .semi_header {
+    flex-direction: column;
+    position: absolute;
+    width: 86vw;
+    min-height: 93vw;
+    padding-top: 5vh;
+    border-radius: 4vw;
+    z-index: 1;
+    text-align: center;
+    top: 13vh;
+    left: 7vw;
+    background-color: rgb(7, 42, 102);
+  }
+  .App .home header .semi_header section {
+    flex-direction: column;
+  }
+  .App .home header .semi_header section span {
+    font-size: x-large;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1.8vh;
+  }
+  .App .home header .semi_header hr {
+    display: block;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    width: 70vw;
+    margin-left: 7vw;
+  }
+  .App .home header .semi_header .aside {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+  .App .home header .semi_header .aside p {
+    font-size: x-large;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 2vh;
+  }
+  .App .home header .semi_header .aside .button {
+    font-size: x-large;
+    width: 70vw;
+    margin-left: 7vw;
+    border-radius: 5vw;
+  }
+  .App .home main {
+    flex-direction: column-reverse;
+    margin-top: 0;
+  }
+  .App .home main img {
+    width: 150vw;
+    height: 60vh;
+  }
+  .App .home main aside {
+    width: 100vw;
+    text-align: center;
+    margin-right: 0vw;
+  }
+  .App .home main aside p {
+    width: 98vw;
+    color: grey;
+  }
+  .App .s_page {
+    min-height: 88vh;
+  }
+  .App .s_page h2 {
+    font-size: 30px;
+  }
+  .App .s_page center p {
+    width: 80vw;
+  }
+  .App .s_page .flexer {
+    flex-direction: column;
+    margin: 6vh 7vw 0vh 7vw;
+  }
+  .App .s_page .flexer aside {
+    width: 80vw;
+    height: 22vh;
+    margin: auto;
+    text-align: center;
+    margin-top: 4vh;
+    border-radius: 2vw;
+  }
+  .App .s_page .flexer aside .div {
+    margin-left: 30vw;
+  }
+  .App .s_page .flexer aside p {
+    width: 75vw;
+  }
+  .App .s_page .flexer .one hr {
+    right: 33vw;
+    transform: rotate(90deg);
+    width: 13vw;
+    bottom: -4vh;
+  }
+  .App .s_page .flexer .two {
+    margin-top: 9vh;
+  }
+  .App .s_page .flexer .two hr {
+    top: 25vh;
+    transform: rotate(90deg);
+    right: 31.5vw;
+    width: 15vw;
+  }
+  .App .s_page .flexer .three {
+    margin-bottom: 2vh;
+  }
+  .App .pre_footer {
+    padding-top: 6vh;
+  }
+  .App .pre_footer button {
+    width: 50vw;
+    height: 5vh;
+    font-size: large;
+    border-radius: 5vw;
+  }
+  .App footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .App footer img {
+    width: 25vw;
+    margin-left: 26vw;
+    margin-bottom: 3vh;
+    bottom: 0;
+  }
+  .App footer .diver {
+    margin-left: 25vw;
+    margin-top: 3vh;
+  }
+  .App footer .diver .MuiSvgIcon-root {
+    margin-right: 2.5vw;
+  }
+}/*# sourceMappingURL=App.css.map */
