@@ -3,7 +3,7 @@ import {configureStore, createSlice} from '@reduxjs/toolkit'
 const fetchSlice =createSlice({
     name:'Data',
     initialState:{
-        data_array:[{inputLink:"www.facebook.com",returnLink: "https://rtksx"}],
+        data_array:[],
         input:"",
         display:null,
         text_color:'white',
@@ -14,6 +14,13 @@ const fetchSlice =createSlice({
             return{
                 ...state,
                 data_array:[...state.data_array,action.payload]
+            }
+        },
+        setArray(state,action){
+            
+            return{
+                ...state,
+                data_array:action.payload
             }
         },
         Value(state,action){

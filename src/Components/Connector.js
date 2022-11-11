@@ -17,6 +17,7 @@ const Connector = () => {
     const under_text = useSelector((val)=>{
         return val.Data.error_text
     })
+    console.log(array)
     const makeRequest = (body) => {
 
     fetch(`https://api.shrtco.de/v2/shorten?url=${body}`)

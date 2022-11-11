@@ -243,7 +243,6 @@ body {
   min-height: 81vh;
   background-color: rgb(211, 219, 224);
   text-align: center;
-  max-height: 150vh;
 }
 .App .s_page h2 {
   margin-top: 6vh;
@@ -423,7 +422,7 @@ body {
     bottom: 7vh;
   }
   .list .array {
-    height: 15.5vh;
+    min-height: 15.5vh;
     padding-top: 1.5vh;
     border-radius: 1.2vw;
     text-align: left;

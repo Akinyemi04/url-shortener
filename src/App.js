@@ -9,15 +9,17 @@ function App() {
   const array = useSelector((val)=>{
     return val.Data.data_array
   })
+  console.log(array)
   useEffect(()=>{
-    if(array.length === 0 && localStorage.getItem('url')){
-      dispatch(fetching.addArray())
+    if(array.length === 0 && localStorage.getItem('link')){
+      dispatch(fetching.setArray(JSON.parse(localStorage.getItem('url'))))
     }
     else if (array.length !==0){
-      localStorage.setItem('url',JSON.stringify(array))
+      localStorage.setItem('link',JSON.stringify(array))
     }
     else{
-      localStorage.setItem('url',JSON.stringify(array))
+      //localStorage.setItem('url',JSON.stringify(array))
+      //localStorage.removeItem('url')
     }
   },[array,dispatch])
   return (
