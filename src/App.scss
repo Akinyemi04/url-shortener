@@ -88,7 +88,7 @@ body{
   margin: auto;
   .array{
     width:84vw;
-    height: 8.5vh;
+    min-height: 8.5vh;
     background-color: white;
     border-radius: 0.65vw;
     margin-bottom: 2.1vh;
@@ -434,7 +434,8 @@ body{
     .array{
       min-height: 15.5vh;
       padding-top: 1.5vh;
-      //padding-left:;
+      height:inherit;
+      padding-bottom: 1vh;
       border-radius: 1.2vw;
       text-align: left;
       hr{
@@ -444,6 +445,7 @@ body{
       }
       .left,.right{
         position: static;
+        word-wrap: break-word;
         padding-left: 5vw;
         font-size: large;
         display: block;
