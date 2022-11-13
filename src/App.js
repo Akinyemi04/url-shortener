@@ -18,8 +18,7 @@ function App() {
       localStorage.setItem('link',JSON.stringify(array))
     }
     else{
-      //localStorage.setItem('url',JSON.stringify(array))
-      //localStorage.removeItem('url')
+      
     }
   },[array,dispatch])
   return (

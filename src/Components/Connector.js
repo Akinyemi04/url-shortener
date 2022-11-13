@@ -82,7 +82,7 @@ const Connector = () => {
         {array.length > 0 && <div className="list">
             {array.map((val,index)=>{
                 return(
-                    <List key={index} val={val}/>
+                    <List keys={index} val={val}/>
                 )
             }
 
