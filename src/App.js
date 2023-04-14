@@ -9,7 +9,6 @@ function App() {
   const array = useSelector((val)=>{
     return val.Data.data_array
   })
-  console.log(array)
   useEffect(()=>{
     if(array.length === 0 && localStorage.getItem('link')){
       dispatch(fetching.setArray(JSON.parse(localStorage.getItem('link'))))

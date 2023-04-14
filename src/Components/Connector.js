@@ -17,7 +17,6 @@ const Connector = () => {
     const under_text = useSelector((val)=>{
         return val.Data.error_text
     })
-    console.log(array)
     const makeRequest = (body) => {
 
     fetch(`https://api.shrtco.de/v2/shorten?url=${body}`)
@@ -27,12 +26,13 @@ const Connector = () => {
             dispatch(fetching.changeTextData('error please input link again'))
         }
         else{
+            console.log(res)
             return(res.json())
         }
         
     })
     .then((data)=>{
-        console.log(data.result.full_short_link)
+        console.log(data)
         dispatch(fetching.addArray({
             inputLink:data.result.original_link,
             returnLink:data.result.full_short_link

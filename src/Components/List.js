@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 const List = (props) => {
     const[button,useButton]= useState('Copy!')
-    console.log(props.keys)
     function Clicked(e){
         e.target.style.backgroundColor='black'
         e.target.style.color='white'

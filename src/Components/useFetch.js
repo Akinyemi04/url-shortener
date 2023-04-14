@@ -36,6 +36,7 @@ const useFetch = (content)=>{
             }
             return res.json()})
         .then(data=>{
+            console.log(data)
             setIsPendding(false)
             setVal(data.data)
             setError(null)
