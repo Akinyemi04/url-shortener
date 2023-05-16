@@ -60,9 +60,6 @@ body {
 .connector .input::-moz-placeholder {
   color: red;
 }
-.connector .input:-ms-input-placeholder {
-  color: red;
-}
 .connector .input::placeholder {
   color: red;
 }
@@ -103,14 +100,18 @@ body {
   position: relative;
 }
 .list .array .left {
-  position: absolute;
+  position: relative;
+  display: flex;
   left: 2vw;
   top: 1.3vh;
+  width: 33vw;
+  max-width: 450px;
+  text-align: left;
 }
 .list .array .right {
   position: absolute;
   top: 1.3vh;
-  right: 25vw;
+  right: 20vw;
   color: rgb(64, 202, 145);
 }
 .list .array hr {
@@ -212,6 +213,16 @@ body {
   height: 65vh;
   -o-object-fit: contain;
      object-fit: contain;
+  opacity: 0;
+  animation: visible 0.5s 0.5s forwards;
+}
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .App .home main aside {
   width: 50vw;
@@ -440,6 +451,7 @@ body {
     padding-left: 5vw;
     font-size: large;
     display: block;
+    width: inherit;
   }
   .list .array .right {
     margin-bottom: 1.3vh;
@@ -478,6 +490,7 @@ body {
     top: 13vh;
     left: 7vw;
     background-color: rgb(7, 42, 102);
+    transition: display 1s ease-in-out;
   }
   .App .home header .semi_header section {
     flex-direction: column;
